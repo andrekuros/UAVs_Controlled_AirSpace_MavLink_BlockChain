@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{57E8F127-BC20-3AA8-A831-CA63B99E1922}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>GCSMav_control</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)\build\examples\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">plots_realtime.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">plots_realtime-d</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)\bin</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Temp\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">GCSMav_control</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(ProjectDir)\build\examples\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">plots_realtime.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">plots_realtime</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(ProjectDir)\build\examples\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">plots_realtime.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">plots_realtime</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include;$(ProjectDir)\3rdparty\imgui;$(ProjectDir)\3rdparty\nanosvg\src;$(ProjectDir)\build\_deps\mahi-util-src\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\json\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\cxxopts\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\fmt\include;$(ProjectDir)\3rdparty\glfw\include;$(ProjectDir)\3rdparty\glad\include;$(ProjectDir)\3rdparty\nanovg\src;$(ProjectDir)\3rdparty\clipper;$(ProjectDir)\3rdparty\nativefiledialog-extended\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /await</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;MAHI_GUI;IMGUI_IMPL_OPENGL_LOADER_GLAD;MAHI_UTIL;MAHI_COROUTINES;MAHI_DEFAULT_LOG;MAHI_LOG_CAPTURE_FILE;_CRT_SECURE_NO_WARNINGS;NOMINMAX;_WINSOCK_DEPRECATED_NO_WARNINGS;FMT_LOCALE;NANOVG_GLAD;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;MAHI_GUI;IMGUI_IMPL_OPENGL_LOADER_GLAD;MAHI_UTIL;MAHI_COROUTINES;MAHI_DEFAULT_LOG;MAHI_LOG_CAPTURE_FILE;_CRT_SECURE_NO_WARNINGS;NOMINMAX;_WINSOCK_DEPRECATED_NO_WARNINGS;FMT_LOCALE;NANOVG_GLAD;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include;$(ProjectDir)\3rdparty\imgui;$(ProjectDir)\3rdparty\nanosvg\src;$(ProjectDir)\build\_deps\mahi-util-src\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\json\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\cxxopts\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\fmt\include;$(ProjectDir)\3rdparty\glfw\include;$(ProjectDir)\3rdparty\glad\include;$(ProjectDir)\3rdparty\nanovg\src;$(ProjectDir)\3rdparty\clipper;$(ProjectDir)\3rdparty\nativefiledialog-extended\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include;$(ProjectDir)\3rdparty\imgui;$(ProjectDir)\3rdparty\nanosvg\src;$(ProjectDir)\build\_deps\mahi-util-src\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\json\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\cxxopts\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\fmt\include;$(ProjectDir)\3rdparty\glfw\include;$(ProjectDir)\3rdparty\glad\include;$(ProjectDir)\3rdparty\nanovg\src;$(ProjectDir)\3rdparty\clipper;$(ProjectDir)\3rdparty\nativefiledialog-extended\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\Debug\mahi-gui-d.lib;..\_deps\mahi-util-build\Debug\mahi-util-d.lib;..\_deps\mahi-util-build\3rdparty\fmt\Debug\fmtd.lib;winmm.lib;pdh.lib;version.lib;..\3rdparty\glfw\src\Debug\glfw3.lib;..\3rdparty\glad\Debug\glad.lib;..\3rdparty\nanovg\Debug\nanovg.lib;..\3rdparty\clipper\Debug\clipper.lib;..\3rdparty\nativefiledialog-extended\src\Debug\nfd.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(ProjectDir)/build/examples/Debug/plots_realtime-d.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(ProjectDir)/build/examples/Debug/plots_realtime-d.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\include;$(ProjectDir)\include\mavsdk;$(ProjectDir)\3rdparty\imgui;$(ProjectDir)\3rdparty\nanosvg\src;$(ProjectDir)\3rdparty\json\include;$(ProjectDir)\3rdparty\cxxopts\include;$(ProjectDir)\3rdparty\fmt\include;$(ProjectDir)\3rdparty\glfw\include;$(ProjectDir)\3rdparty\glad\include;$(ProjectDir)\3rdparty\nanovg\src;$(ProjectDir)\3rdparty\clipper;$(ProjectDir)\3rdparty\nativefiledialog-extended\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /await</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;MAHI_GUI;IMGUI_IMPL_OPENGL_LOADER_GLAD;MAHI_UTIL;MAHI_COROUTINES;MAHI_DEFAULT_LOG;MAHI_LOG_CAPTURE_FILE;_CRT_SECURE_NO_WARNINGS;NOMINMAX;_WINSOCK_DEPRECATED_NO_WARNINGS;FMT_LOCALE;NANOVG_GLAD;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;MAHI_GUI;IMGUI_IMPL_OPENGL_LOADER_GLAD;MAHI_UTIL;MAHI_COROUTINES;MAHI_DEFAULT_LOG;MAHI_LOG_CAPTURE_FILE;_CRT_SECURE_NO_WARNINGS;NOMINMAX;_WINSOCK_DEPRECATED_NO_WARNINGS;FMT_LOCALE;NANOVG_GLAD;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include;$(ProjectDir)\3rdparty\imgui;$(ProjectDir)\3rdparty\nanosvg\src;$(ProjectDir)\build\_deps\mahi-util-src\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\json\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\cxxopts\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\fmt\include;$(ProjectDir)\3rdparty\glfw\include;$(ProjectDir)\3rdparty\glad\include;$(ProjectDir)\3rdparty\nanovg\src;$(ProjectDir)\3rdparty\clipper;$(ProjectDir)\3rdparty\nativefiledialog-extended\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include;$(ProjectDir)\3rdparty\imgui;$(ProjectDir)\3rdparty\nanosvg\src;$(ProjectDir)\build\_deps\mahi-util-src\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\json\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\cxxopts\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\fmt\include;$(ProjectDir)\3rdparty\glfw\include;$(ProjectDir)\3rdparty\glad\include;$(ProjectDir)\3rdparty\nanovg\src;$(ProjectDir)\3rdparty\clipper;$(ProjectDir)\3rdparty\nativefiledialog-extended\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>d3d12.lib;mavsdk_action.lib;mavsdk_mission.lib;mavsdk_telemetry.lib;mavsdk_info.lib;mavsdk_param.lib;mavsdk.lib;mahi-gui.lib;mahi-util.lib;fmt.lib;winmm.lib;pdh.lib;version.lib;glfw3.lib;glad.lib;nanovg.lib;clipper.lib;nfd.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(ProjectDir)/build/examples/Release/plots_realtime.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(ProjectDir)/build/examples/Release/plots_realtime.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include;$(ProjectDir)\3rdparty\imgui;$(ProjectDir)\3rdparty\nanosvg\src;$(ProjectDir)\build\_deps\mahi-util-src\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\json\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\cxxopts\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\fmt\include;$(ProjectDir)\3rdparty\glfw\include;$(ProjectDir)\3rdparty\glad\include;$(ProjectDir)\3rdparty\nanovg\src;$(ProjectDir)\3rdparty\clipper;$(ProjectDir)\3rdparty\nativefiledialog-extended\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /await</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;MAHI_GUI;IMGUI_IMPL_OPENGL_LOADER_GLAD;MAHI_UTIL;MAHI_COROUTINES;MAHI_DEFAULT_LOG;MAHI_LOG_CAPTURE_FILE;_CRT_SECURE_NO_WARNINGS;NOMINMAX;_WINSOCK_DEPRECATED_NO_WARNINGS;FMT_LOCALE;NANOVG_GLAD;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;MAHI_GUI;IMGUI_IMPL_OPENGL_LOADER_GLAD;MAHI_UTIL;MAHI_COROUTINES;MAHI_DEFAULT_LOG;MAHI_LOG_CAPTURE_FILE;_CRT_SECURE_NO_WARNINGS;NOMINMAX;_WINSOCK_DEPRECATED_NO_WARNINGS;FMT_LOCALE;NANOVG_GLAD;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include;$(ProjectDir)\3rdparty\imgui;$(ProjectDir)\3rdparty\nanosvg\src;$(ProjectDir)\build\_deps\mahi-util-src\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\json\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\cxxopts\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\fmt\include;$(ProjectDir)\3rdparty\glfw\include;$(ProjectDir)\3rdparty\glad\include;$(ProjectDir)\3rdparty\nanovg\src;$(ProjectDir)\3rdparty\clipper;$(ProjectDir)\3rdparty\nativefiledialog-extended\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include;$(ProjectDir)\3rdparty\imgui;$(ProjectDir)\3rdparty\nanosvg\src;$(ProjectDir)\build\_deps\mahi-util-src\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\json\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\cxxopts\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\fmt\include;$(ProjectDir)\3rdparty\glfw\include;$(ProjectDir)\3rdparty\glad\include;$(ProjectDir)\3rdparty\nanovg\src;$(ProjectDir)\3rdparty\clipper;$(ProjectDir)\3rdparty\nativefiledialog-extended\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\MinSizeRel\mahi-gui.lib;..\_deps\mahi-util-build\MinSizeRel\mahi-util.lib;..\_deps\mahi-util-build\3rdparty\fmt\MinSizeRel\fmt.lib;winmm.lib;pdh.lib;version.lib;..\3rdparty\glfw\src\MinSizeRel\glfw3.lib;..\3rdparty\glad\MinSizeRel\glad.lib;..\3rdparty\nanovg\MinSizeRel\nanovg.lib;..\3rdparty\clipper\MinSizeRel\clipper.lib;..\3rdparty\nativefiledialog-extended\src\MinSizeRel\nfd.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(ProjectDir)/build/examples/MinSizeRel/plots_realtime.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(ProjectDir)/build/examples/MinSizeRel/plots_realtime.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include;$(ProjectDir)\3rdparty\imgui;$(ProjectDir)\3rdparty\nanosvg\src;$(ProjectDir)\build\_deps\mahi-util-src\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\json\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\cxxopts\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\fmt\include;$(ProjectDir)\3rdparty\glfw\include;$(ProjectDir)\3rdparty\glad\include;$(ProjectDir)\3rdparty\nanovg\src;$(ProjectDir)\3rdparty\clipper;$(ProjectDir)\3rdparty\nativefiledialog-extended\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /await</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;MAHI_GUI;IMGUI_IMPL_OPENGL_LOADER_GLAD;MAHI_UTIL;MAHI_COROUTINES;MAHI_DEFAULT_LOG;MAHI_LOG_CAPTURE_FILE;_CRT_SECURE_NO_WARNINGS;NOMINMAX;_WINSOCK_DEPRECATED_NO_WARNINGS;FMT_LOCALE;NANOVG_GLAD;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;MAHI_GUI;IMGUI_IMPL_OPENGL_LOADER_GLAD;MAHI_UTIL;MAHI_COROUTINES;MAHI_DEFAULT_LOG;MAHI_LOG_CAPTURE_FILE;_CRT_SECURE_NO_WARNINGS;NOMINMAX;_WINSOCK_DEPRECATED_NO_WARNINGS;FMT_LOCALE;NANOVG_GLAD;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include;$(ProjectDir)\3rdparty\imgui;$(ProjectDir)\3rdparty\nanosvg\src;$(ProjectDir)\build\_deps\mahi-util-src\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\json\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\cxxopts\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\fmt\include;$(ProjectDir)\3rdparty\glfw\include;$(ProjectDir)\3rdparty\glad\include;$(ProjectDir)\3rdparty\nanovg\src;$(ProjectDir)\3rdparty\clipper;$(ProjectDir)\3rdparty\nativefiledialog-extended\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include;$(ProjectDir)\3rdparty\imgui;$(ProjectDir)\3rdparty\nanosvg\src;$(ProjectDir)\build\_deps\mahi-util-src\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\json\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\cxxopts\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\fmt\include;$(ProjectDir)\3rdparty\glfw\include;$(ProjectDir)\3rdparty\glad\include;$(ProjectDir)\3rdparty\nanovg\src;$(ProjectDir)\3rdparty\clipper;$(ProjectDir)\3rdparty\nativefiledialog-extended\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\RelWithDebInfo\mahi-gui.lib;..\_deps\mahi-util-build\RelWithDebInfo\mahi-util.lib;..\_deps\mahi-util-build\3rdparty\fmt\RelWithDebInfo\fmt.lib;winmm.lib;pdh.lib;version.lib;..\3rdparty\glfw\src\RelWithDebInfo\glfw3.lib;..\3rdparty\glad\RelWithDebInfo\glad.lib;..\3rdparty\nanovg\RelWithDebInfo\nanovg.lib;..\3rdparty\clipper\RelWithDebInfo\clipper.lib;..\3rdparty\nativefiledialog-extended\src\RelWithDebInfo\nfd.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>$(ProjectDir)/build/examples/RelWithDebInfo/plots_realtime.lib</ImportLibrary>
+      <ProgramDataBaseFile>$(ProjectDir)/build/examples/RelWithDebInfo/plots_realtime.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(ProjectDir)\build\ZERO_CHECK.vcxproj">
+      <Project>{ADB5AC91-4680-315D-AEE4-55166E5580A9}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="$(ProjectDir)\build\3rdparty\clipper\clipper.vcxproj">
+      <Project>{08F6BCDE-58F7-349A-AF57-A902461AEEC4}</Project>
+      <Name>clipper</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(ProjectDir)\build\_deps\mahi-util-build\3rdparty\fmt\fmt.vcxproj">
+      <Project>{231C2DF1-6AF3-3EF0-BBE3-06FB2ECDE22D}</Project>
+      <Name>fmt</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(ProjectDir)\build\3rdparty\glad\glad.vcxproj">
+      <Project>{194C34C8-C17B-37F7-9ECE-180E1375B55A}</Project>
+      <Name>glad</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(ProjectDir)\build\3rdparty\glfw\src\glfw.vcxproj">
+      <Project>{67C6C9D7-D1F5-38D6-BA44-5D9012229E31}</Project>
+      <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(ProjectDir)\build\gui.vcxproj">
+      <Project>{E8EAD5D2-1EA3-3C9C-90B5-6F40185F37E3}</Project>
+      <Name>gui</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(ProjectDir)\build\3rdparty\nanovg\nanovg.vcxproj">
+      <Project>{44143C7B-9209-3C09-A02B-4E121126839E}</Project>
+      <Name>nanovg</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(ProjectDir)\build\3rdparty\nativefiledialog-extended\src\nfd.vcxproj">
+      <Project>{0009CAA1-2C5D-3254-8589-9C204062E630}</Project>
+      <Name>nfd</Name>
+    </ProjectReference>
+    <ProjectReference Include="$(ProjectDir)\build\_deps\mahi-util-build\util.vcxproj">
+      <Project>{1A9892F3-7FEA-3192-A61A-7ADC6580765E}</Project>
+      <Name>util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\GCSMav_control\GCSMav_control.cpp" />
+    <ClCompile Include="..\..\..\GCSMav_control\UAV_MAV.cpp" />
+    <ClCompile Include="..\..\..\GCSMav_control\GridView.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\GCSMav_control\GCSMav_control.h" />
+    <ClInclude Include="..\..\..\GCSMav_control\UAV_MAV.h" />
+    <ClInclude Include="..\..\..\GCSMav_control\GridView.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

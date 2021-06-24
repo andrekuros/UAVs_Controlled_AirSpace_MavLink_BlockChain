@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="W:\OneDrive\Doutorado\Disciplinas\SC249\Projeto\GCS_MavSDK\mahi-gui-a6a078cb725470eda14291bbd818878c8e22de97\examples\ex_plots_realtime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="W:\OneDrive\Doutorado\Disciplinas\SC249\Projeto\GCS_MavSDK\mahi-gui-a6a078cb725470eda14291bbd818878c8e22de97\examples\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="W:\OneDrive\Doutorado\Disciplinas\SC249\Projeto\GCS_MavSDK\mahi-gui-a6a078cb725470eda14291bbd818878c8e22de97\examples\my_icon.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{BB418C28-554B-39FF-95AB-0052393FD85F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
