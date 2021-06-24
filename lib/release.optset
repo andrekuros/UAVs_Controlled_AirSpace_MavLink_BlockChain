@@ -1,0 +1,18 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <IncludePath>W:\OneDrive\Doutorado\Disciplinas\SC249\Projeto\GCS_MavSDK\GCS_MavSDK\include;W:\OneDrive\Doutorado\Disciplinas\SC249\Projeto\GCS_MavSDK\GCS_MavSDK\include\mavsdk;$(IncludePath)</IncludePath>
+        <ILINK_LibraryPath>W:\OneDrive\Doutorado\Disciplinas\SC249\Projeto\GCS_MavSDK\GCS_MavSDK\lib;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+        <Borland.ProjectType>OptionSet</Borland.ProjectType>
+        <BorlandProject>
+            <CPlusPlusBuilder.Personality/>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+</Project>
