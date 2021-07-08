@@ -67,7 +67,7 @@
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)\bin</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Temp\Release\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">GCSMav_control</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UAVControl</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)\include;$(ProjectDir)\3rdparty\imgui;$(ProjectDir)\3rdparty\nanosvg\src;$(ProjectDir)\build\_deps\mahi-util-src\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\json\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\cxxopts\include;$(ProjectDir)\build\_deps\mahi-util-src\3rdparty\fmt\include;$(ProjectDir)\3rdparty\glfw\include;$(ProjectDir)\3rdparty\glad\include;$(ProjectDir)\3rdparty\nanovg\src;$(ProjectDir)\3rdparty\clipper;$(ProjectDir)\3rdparty\nativefiledialog-extended\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\include;$(ProjectDir)\include\mavsdk;$(ProjectDir)\3rdparty\imgui;$(ProjectDir)\3rdparty\nanosvg\src;$(ProjectDir)\3rdparty\json\include;$(ProjectDir)\3rdparty\cxxopts\include;$(ProjectDir)\3rdparty\fmt\include;$(ProjectDir)\3rdparty\glfw\include;$(ProjectDir)\3rdparty\glad\include;$(ProjectDir)\3rdparty\nanovg\src;$(ProjectDir)\3rdparty\clipper;$(ProjectDir)\3rdparty\nativefiledialog-extended\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /await</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -117,8 +117,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\Debug\mahi-gui-d.lib;..\_deps\mahi-util-build\Debug\mahi-util-d.lib;..\_deps\mahi-util-build\3rdparty\fmt\Debug\fmtd.lib;winmm.lib;pdh.lib;version.lib;..\3rdparty\glfw\src\Debug\glfw3.lib;..\3rdparty\glad\Debug\glad.lib;..\3rdparty\nanovg\Debug\nanovg.lib;..\3rdparty\clipper\Debug\clipper.lib;..\3rdparty\nativefiledialog-extended\src\Debug\nfd.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>d3d12.lib;mavsdk_action.lib;mavsdk_mission.lib;mavsdk_telemetry.lib;mavsdk_info.lib;mavsdk_param.lib;mavsdk.lib;mahi-gui.lib;mahi-util.lib;fmt.lib;winmm.lib;pdh.lib;version.lib;glfw3.lib;glad.lib;nanovg.lib;clipper.lib;nfd.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -308,14 +308,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\GCSMav_control\GCSMav_control.cpp" />
-    <ClCompile Include="..\..\..\GCSMav_control\UAV_MAV.cpp" />
-    <ClCompile Include="..\..\..\GCSMav_control\GridView.cpp" />
+    <ClInclude Include="GCSMav_control.h" />
+    <ClInclude Include="GridView.h" />
+    <ClInclude Include="UAV_MAV.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\GCSMav_control\GCSMav_control.h" />
-    <ClInclude Include="..\..\..\GCSMav_control\UAV_MAV.h" />
-    <ClInclude Include="..\..\..\GCSMav_control\GridView.h" />
+    <ClCompile Include="GCSMav_control.cpp" />
+    <ClCompile Include="GridView.cpp" />
+    <ClCompile Include="UAVControl.cpp" />
+    <ClCompile Include="UAV_MAV.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
