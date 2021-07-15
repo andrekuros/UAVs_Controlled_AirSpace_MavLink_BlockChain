@@ -42,12 +42,12 @@ UAV_MAV::UAV_MAV() : SysId(0), lat(0), lon(0),system(nullptr), telemetry(nullptr
 		else
 			resultsCounterMission[result] = 1;
 
+		uploadingMission = false;
+
 		if (result == Mission::Result::Success)
 		{
-			std::cout << "\n" << cod << "::Task:(" << taskList.front().type << ")::Success\n";
-			taskList.erase(taskList.begin());
-			actionStatus = "Ready";
-
+			std::cout << "\n" << cod << "::Task:(" << taskList.front().type << ")::Success\n";			
+			
 			if (taskList.front().type == "missionStart") 
 			{
 				onMission = true;
@@ -57,13 +57,16 @@ UAV_MAV::UAV_MAV() : SysId(0), lat(0), lon(0),system(nullptr), telemetry(nullptr
 			{
 				onHold = true;
 				onMission = false;
-			}
+			}			
+			taskList.erase(taskList.begin());
+			actionStatus = "Ready";
 		}
 		else
 		{			
 			taskRetryCount++;
 			actionStatus = "Retry";
-			std::cout << "\n" << cod << "::Task:(" << taskList.front().type << ")::Fail(" << taskRetryCount << ")::" << result;
+			std::cout << "\n" << cod << "::Task:(" << taskList.front().type << ")::Fail(" << taskRetryCount << "):->" << result;
+
 			if (taskRetryCount == 3)
 			{
 				taskRetryCount = 0;
@@ -75,13 +78,6 @@ UAV_MAV::UAV_MAV() : SysId(0), lat(0), lon(0),system(nullptr), telemetry(nullptr
 	};
 	
 };
-
-/*void UAV_MAV::updateTelemetry() {
-
-    telemetry->subscribe_position(positionCallBack);
-
-}*/
-
 
 void UAV_MAV::createMission(std::string type, double lat, double lon, double area)
 {
@@ -165,7 +161,7 @@ Mission::MissionItem UAV_MAV::make_mission_item(
 
 void UAV_MAV::evaluateTasks()
 {
-	if (actionStatus == "Waiting" || taskList.size() == 0) return;
+	if (actionStatus == "Waiting" || taskList.size() == 0 || uploadingMission) return;
 
 	ActionData act = taskList.front();
 
@@ -246,6 +242,7 @@ void UAV_MAV::sendMissionUpload()
 		else
 			missionEventsCounter["missionUpload"] = 1;
 		
+		uploadingMission = true;
 		missionManager->upload_mission_async(*nextMission, missionCallback);		
 		actionStatus = "Waiting";
 	}
@@ -310,7 +307,7 @@ void UAV_MAV::sendFlyTo(float lat, float lon, float alt, float yaw)
 		else
 			actionsCounter["flyTo"] = 1;
 
-		action->goto_location_async(lat, lon, 488+30, yaw, actionCallback);
+		action->goto_location_async(lat, lon, 488.0+30.0, yaw, actionCallback);
 	
 		actionStatus = "Waiting";
 	}

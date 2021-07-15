@@ -30,8 +30,10 @@ int main(int argc, char const* argv[])
 	grid.run();
 #else
 	
-	Sleep(30);
-	gcs->checkSystems();
+	Sleep(45000);
+	gcs->checkSystems();	
+	Sleep(30000);
+
 
 	while (tests.size() > 0)
 	{
@@ -58,27 +60,23 @@ int main(int argc, char const* argv[])
 		}		
 
 		//Run Tests
-		if (runTime > 20)
+		if (runTime - gcs->lastCheckTest >= 1)
 		{
-
-			if (runTime - gcs->lastCheckTest >= 1)
+			gcs->checkSystems();
+			gcs->lastCheckTest = runTime;
+			gcs->runTests(runningTest);
+			if (gcs->runningTest == false)
 			{
-				gcs->lastCheckTest = runTime;
-
-				gcs->runTests(runningTest);
-
-				if (gcs->runningTest == false)
-				{
 					tests.pop_back();
-				}
 			}
 		}
+		Sleep(5);
 	}
 
 	gcs->generateStats(runningTest + ".csv");
-
+	
 #endif
-
+	
 	return 0;
 
 }

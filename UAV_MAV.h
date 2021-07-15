@@ -61,7 +61,7 @@ class UAV_MAV {
             float gimbal_yaw_deg,
             Mission::MissionItem::CameraAction camera_action);
 
-        void UAV_MAV::addTask(ActionData act);
+        void addTask(ActionData act);
         void evaluateTasks();
         void sendTakeOff(float alt);
         void sendFlyTo(float lat, float lon, float alt, float yaw);
@@ -95,6 +95,7 @@ class UAV_MAV {
         bool onMission = false;
         bool onHold = false;
         bool finishedMission = false;
+        bool uploadingMission = false;
         double missionProgress = -1;
         int taskRetryCount = 0;
         bool hasDrawer = false;

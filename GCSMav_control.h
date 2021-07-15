@@ -15,7 +15,6 @@
 #include <utility>
 #include <algorithm>
 #include <random>
-#include <windows.h>
 #include <chrono>
 #include <cstdint>
 #include <mavsdk/mavsdk.h>

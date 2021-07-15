@@ -127,17 +127,17 @@ void GCSMav_control::prepareSim(std::string type)
                 uav->addTask(actArm);
 
                 ActionData actTakeOff{ "takeOff" };
-                actTakeOff.alt = 30.0f ;                
+                actTakeOff.alt = 2.5f ;                
                 uav->addTask(actTakeOff);
                 //ActionData actFlyTo{ "flyTo", company->geoPos.lat, company->geoPos.lon, 30.0f, hdgFromPath(Geo(uav->lat, uav->lon), company->geoPos) };
                 //uav->addTask(actFlyTo);
  
-                uav->createMission("flyto", company->geoPos.lat, company->geoPos.lon);
-                ActionData actMissionUpload{ "missionUpload" };                
-                uav->addTask(actMissionUpload);
+                //uav->createMission("flyto", company->geoPos.lat, company->geoPos.lon);
+                // ActionData actMissionUpload{ "missionUpload" };                
+                //uav->addTask(actMissionUpload);
 
-                ActionData actMissionStart{ "missionStart" };                
-                uav->addTask(actMissionStart);
+                //ActionData actMissionStart{ "missionStart" };                
+                //uav->addTask(actMissionStart);
 
 
             }
@@ -152,28 +152,31 @@ void GCSMav_control::runTests(std::string test)
         double testRunTime = getSimTime() - testStart;
         if (runningTest)
         {                       
-            if (testRunTime >= 30)
+            if (testRunTime >= 10)
             {
-                if ((testFase + 2) * 15 < testRunTime && testFase <= testTotal)
+                if ((testFase + 2) * 5 < testRunTime && testFase <= testTotal)
                 {
                     testFase++;
 
-                    std::cout << "\ntestRunning::Fase::" << testFase;
+                    std::cout << "\nTestRunning::Fase::" << testFase;
 
                     for (auto company : CompanyList)
                     {
                         for (auto const [key, uav] : company->UAV_MAP)
-                        {
-                            
+                        {                            
                             if (testFase % 2 == 0)
                             {
-                                ActionData actMisionPause{ "missionPause" };
-                                uav->addTask(actMisionPause);
+                                //Geo geo = gridToGeo(Coord(rand() % 20, rand() % 20), gconf);
+                                //uav->createMission("flyTo", geo.lat, geo.lon, 0.01);
+                               // ActionData actMissionUpload{ "flyTo", geo.lat, geo.lon,488+30,rand()% 360};
+                                //uav->addTask(actMissionUpload);
 
-                                double rnd = rand() % 20;
-                                Geo geo = gridToGeo(Coord(rand() % 20, rand() % 20), gconf);
-                                ActionData actFlyTo{ "flyTo", geo.lat, geo.lon, 488 + 30.0f, hdgFromPath(Geo(uav->lat, uav->lon), geo) };
-                                uav->addTask(actFlyTo);
+                               // ActionData actMissionStart{ "missionStart" };
+                               // uav->addTask(actMissionStart);
+                               // uav->onMission = true;
+                                uav->createMission("random", 0, 0, 0.01);
+                                ActionData actMissionUpload{ "missionUpload" };
+                                uav->addTask(actMissionUpload);
                             }
                             else
                             {
@@ -181,9 +184,9 @@ void GCSMav_control::runTests(std::string test)
                                 ActionData actMissionUpload{ "missionUpload" };
                                 uav->addTask(actMissionUpload);
 
-                                ActionData actMissionStart{ "missionStart" };
-                                uav->addTask(actMissionStart);
-                                uav->onMission = true;
+                               // ActionData actMissionStart{ "missionStart" };
+                               // uav->addTask(actMissionStart);
+                               // uav->onMission = true;
                             }
                         }
                     }
@@ -195,7 +198,7 @@ void GCSMav_control::runTests(std::string test)
             testRunning == test;
             testStart = getSimTime();
             testFase = 0;
-            testTotal = 18; 
+            testTotal = 20; 
             std::cout << "\nTESTE01::Started";
             prepareSim("delivery");
             runningTest = true;
@@ -204,89 +207,25 @@ void GCSMav_control::runTests(std::string test)
         if (testFase >= testTotal)
         {
             testRunning = "Finalizing...";            
-            if (testRunTime > (testTotal + 2 ) * 15 + 30)
+            if (testRunTime > (testTotal + 2 ) * 5 + 15)
             {
                 testRunning = "None";
                 runningTest = false;
-                std::cout << "\nTESTE01::Finished";
+                std::cout << "\nTESTE01::UFinished11(" << getSimTime() - testStart << ")";
                 testStart = 0;                
             }
         }        
     }
 
-    if (test == "StressTest")
-    {
-        double testRunTime = getSimTime() - testStart;
-        if (runningTest)
-        {
-            if (testRunTime >= 30)
-            {
-                if ((testFase + 2) * 5 < testRunTime && testFase <= testTotal)
-                {
-                    testFase++;
-
-                    std::cout << "\ntestRunning::Fase::" << testFase;
-
-                    for (auto company : CompanyList)
-                    {
-                        for (auto const [key, uav] : company->UAV_MAP)
-                        {
-                           
-                                ActionData actMisionPause{ "missionPause" };
-                                uav->addTask(actMisionPause);
-
-                                double rnd = rand() % 20;
-                                Geo geo = gridToGeo(Coord(rand() % 20, rand() % 20), gconf);
-                                ActionData actFlyTo{ "flyTo", geo.lat, geo.lon, 488 + 30.0f, hdgFromPath(Geo(uav->lat, uav->lon), geo) };
-                                uav->addTask(actFlyTo);
-                          
-                                uav->createMission("random", 0, 0, 0.01);
-                                ActionData actMissionUpload{ "missionUpload" };
-                                uav->addTask(actMissionUpload);
-
-                                ActionData actMissionStart{ "missionStart" };
-                                uav->addTask(actMissionStart);
-                                uav->onMission = true;                            
-                        }
-                    }
-                }
-            }
-        }
-        else
-        {
-            testRunning == test;
-            testStart = getSimTime();
-            testFase = 0;
-            testTotal = 30;
-            std::cout << "\nSTRESS_TEST::Started";
-            prepareSim("delivery");
-            runningTest = true;
-        }
-
-        if (testFase >= testTotal)
-        {
-            testRunning = "Finalizing...";
-            if (testRunTime > (testTotal + 2) * 5 + 30)
-            {
-                testRunning = "None";
-                runningTest = false;
-                std::cout << "\nSTRESS_TEST::Finished";
-                testStart = 0;
-            }
-        }
-    }
-
-
-
+   
 }
 
 void GCSMav_control::generateStats(std::string file)
-{
-    
+{    
     std::ofstream myfile;
-    myfile.open(file);
+    myfile.open(file, std::ios_base::app);
 
-    myfile << "cod; company; actionRequests; actionSuccess; missionRequests; missionsSuccess, timeouts\n";
+    myfile << "\n\ncod; company; actionRequests; actionSuccess; missionRequests; missionsSuccess; busy; cancel; timeouts\n";
      
     for (auto company : CompanyList)
     {                       
@@ -296,6 +235,8 @@ void GCSMav_control::generateStats(std::string file)
             int actionOk = 0;
             int missionReq = 0;
             int missionOk = 0;
+            int missionBusy = 0;
+            int missionCancel = 0;
             int timeOuts = 0;
 
             for (auto const [key, res] : uav->actionsCounter) actionReq = actionReq + res;
@@ -307,9 +248,20 @@ void GCSMav_control::generateStats(std::string file)
                 timeOuts += uav->resultsCounter[Action::Result::Timeout];
             }
 
-
             for (auto const [key, res] : uav->missionEventsCounter) missionReq = missionReq + res;
             missionOk = uav->resultsCounterMission[Mission::Result::Success];
+            
+            if (uav->resultsCounterMission.find(Mission::Result::TransferCancelled) !=
+                uav->resultsCounterMission.end())
+            {
+                missionCancel = uav->resultsCounterMission[Mission::Result::TransferCancelled];
+            }  
+            
+            if (uav->resultsCounterMission.find(Mission::Result::Busy) !=
+                uav->resultsCounterMission.end())
+            {
+                missionBusy = uav->resultsCounterMission[Mission::Result::Busy];
+            }
 
             if (uav->resultsCounterMission.find(Mission::Result::Timeout) !=
                 uav->resultsCounterMission.end())
@@ -321,6 +273,7 @@ void GCSMav_control::generateStats(std::string file)
             myfile << uav->cod << ";" << company->cod << ";";
             myfile << actionReq << ";" << actionOk << ";";
             myfile << missionReq << ";" << missionOk << ";";
+            myfile << missionBusy << ";" << missionCancel << ";";
             myfile << timeOuts << "\n";
         }
     }    
