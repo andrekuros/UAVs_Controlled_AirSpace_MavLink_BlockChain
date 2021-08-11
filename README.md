@@ -1,8 +1,8 @@
-# MAVLink UAVs CONTROLLED AIRSPACE 
+# UTM Multi-Features Docker Based TestBed
 
-This is an academic project that aims to implement a basic interface to receive information from multiples drones through MAVLink protocol and implement directives to the drones, according with external demands, for example a delivery of a product.  
+This is an academic project that aims to implement a docker based simulation infraesctruture that allow to represent multiple features of an Unmanned Aircraft System Traffic Management (UTM), from the low level drone control system up to the airspace management algorithm.    
 
-Main Tools:   
+Some of the Open-Sorce Tools integrated to the project:   
    
 MAVSDK   
 https://github.com/mavlink/MAVSDK   
