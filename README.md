@@ -2,7 +2,8 @@
 
 This is an academic project that aims to implement a docker based simulation infraesctruture that allow to represent multiple features of an Unmanned Aircraft System Traffic Management (UTM), from the low level drone control system up to the airspace management algorithm.    
 
-The proposed TestBed is under construction and the current version was built througt the integration of some OpenSource projects, as presented below:     
+The proposed TestBed is under construction and the current version was built througt the integration of some OpenSource projects, as presented below:
+   
 ![image](https://user-images.githubusercontent.com/18732953/129098862-49636de7-294f-438e-a099-0c933ce92538.png)
 
 # Reproducing the TestBed
@@ -132,9 +133,17 @@ CLI( net )
 # Shut down network
 net.stop()
 ```
+<hr>
 
-# Using the UTM Manager
+# The UTM Controller
 
+The UTM Controller is the solution created to allow to test algorithms to control the Airspace, receiving informations from all drones in the simulation and sending commands and authorizations. The solution is divided in two main modules, the GCS_UTM and the GridView. The GCS_UTM has the background to communicate with the drones and the interfaces to interact with them. The GridView is an solution to allow the visualization of the Airspace and add the possibility to interact in realtime. 
+
+## Using the GCS_UTM
+
+The current version of the GCS_UTM was tested Windows or Linux and can be started inside or outside of the Mininet, allowing to monitore and control the drones from an external host. 
+
+### GCS_UTM on Windows
 
 
 
