@@ -203,28 +203,29 @@ At this moment the model of the tests are hardcoded in C++ in the GCS_UTM.cpp at
    * ex: python3 demo01.py 
     
 * Open the GCS_UTM 
-   * Wait to the Mavsdk to connect to all drones (for example with 30 drones in some cases 45 seconds):
+   * Wait to the Mavsdk to connect to all drones (with 30 drones in some cases 45 seconds):
       * With GridView -> Click "Update Systems"
       * Without GridView -> Press Enter 
-   * Wait for all systems to be recognized (for example with 30 drones in some cases 30 seconds)
+   * Wait for all systems to be recognized (with 30 drones in some cases 30 seconds)
       * With GridView -> Click "Run Test 1"
       * Without GridView -> Press Enter   
       
 The results will be in the file "name_of_the_test.csv", as example:
 
-cod| company| actionRequests| actionSuccess| missionRequests| missionsSuccess| busy| cancel| timeouts
-c1-n10|1|3|0|21|21|0|0|0
-c1-n11|1|3|0|21|21|0|0|0
-c1-n12|1|3|0|21|21|0|0|0
-c1-n13|1|3|0|21|21|0|0|0
-c1-n14|1|3|0|21|21|0|0|0
-c1-n15|1|3|0|21|21|0|0|0
+| cod |  company |  actionRequests |  actionSuccess |  missionRequests |  missionsSuccess |  busy |  cancel |  timeouts |
+| --- |  --- |  --- |  --- |  --- |  --- |  --- |  --- |  --- |
+| c1-n10 | 1 | 3 | 0 | 21 | 21 | 0 | 0 | 0 |
+| c1-n11 | 1 | 3 | 0 | 21 | 21 | 0 | 0 | 0 |
+| c1-n12 | 1 | 3 | 0 | 21 | 21 | 0 | 0 | 0 |
+| c1-n13 | 1 | 3 | 0 | 21 | 21 | 0 | 0 | 0 |
+| c1-n14 | 1 | 3 | 0 | 21 | 21 | 0 | 0 | 0 |
+| c1-n15 | 1 | 3 | 0 | 21 | 21 | 0 | 0 | 0 |
 
 <hr>
 
-## Common Errors:
+# Some known errors:
 
-# When Running the Python ContainerNet  Scrypt:
+## When Running the Python ContainerNet  Scrypt:
 
 FileNotFoundError: [Errno 2] No such file or directory: '/etc/network/interfaces' 
 
