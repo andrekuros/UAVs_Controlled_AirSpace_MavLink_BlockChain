@@ -1,18 +1,18 @@
 # UTM Multi-Features Docker Based TestBed
 
-This is an academic project that aims to implement a docker based simulation infraesctruture that allow to represent multiple features of an Unmanned Aircraft System Traffic Management (UTM), from the low level drone control system up to the airspace management algorithm.    
+This is an academic project that aims to implement a docker based simulation infrastructure that allow to represent multiple features of an Unmanned Aircraft System Traffic Management (UTM), from the low level drone control system up to the airspace management algorithm.    
 
-The proposed TestBed is under construction and the current version was built througt the integration of some OpenSource projects, as presented below:
+The proposed TestBed is under construction and the current version was built through the integration of some OpenSource projects, as presented below:
    
 ![image](https://user-images.githubusercontent.com/18732953/129098862-49636de7-294f-438e-a099-0c933ce92538.png)
 
 # Reproducing the TestBed
 
-All tests were done on Ubuntu 20.04 LTS for the infraestruture and Windows 10 for the visualization tool.
+All tests were done on Ubuntu 20.04 LTS for the infrastructure and Windows 10 for the visualization tool.
 
-## Building the Infraestrucuture
+## Building the Infrastructure
 
-The base for the resourses for the TestBed are:   
+The base for the resources for the TestBed are:   
    
 DOCKER CONTAINERS: https://www.docker.com/  
 CONTAINERNET (MININET): https://containernet.github.io/ 
@@ -50,7 +50,7 @@ docker run --name containernet -it --rm --privileged --pid='host' -v /var/run/do
 
 ### STEP 3: Get PX4 SITL HEADLESS FLEX
 
-The Drone simulation solution selected for this first version of this TestBed was the SITL from the PX4 Autopilot (https://px4.io/) using Gazebo (http://gazebosim.org/) simulation. To make it possible, we start from the image px4-gazebo-headless (https://github.com/JonasVautherin/px4-gazebo-headless), but we need to make some modifications to have enough flexibility. The new container project created aims to add more flexibility to change the SITL params when running docker image with the lastest version of PX4 and to allow inicializations in different conditions and configurations, becoming more suitable for a wider range of applications (https://hub.docker.com/r/andrekuros/px4-sitl-headless-flex).
+The Drone simulation solution selected for this first version of this TestBed was the SITL from the PX4 Autopilot (https://px4.io/) using Gazebo (http://gazebosim.org/) simulation. To make it possible, we start from the image px4-gazebo-headless (https://github.com/JonasVautherin/px4-gazebo-headless), but we need to make some modifications to have enough flexibility. The new container project created aims to add more flexibility to change the SITL params when running docker image with the latest version of PX4 and to allow initialization in different conditions and configurations, becoming more suitable for a wider range of applications (https://hub.docker.com/r/andrekuros/px4-sitl-headless-flex).
 
 Getting px4-headless-flex
 
@@ -141,9 +141,95 @@ The UTM Controller is the solution created to allow to test algorithms to contro
 
 ## Using the GCS_UTM
 
-The current version of the GCS_UTM was tested Windows or Linux and can be started inside or outside of the Mininet, allowing to monitore and control the drones from an external host. 
+The current version of the GCS_UTM was tested Windows or Linux and can be started inside or outside of the Mininet, allowing to monitor and control the drones from an external host. 
 
-### GCS_UTM on Windows
+### Setting GCS_UTM
+   
+Some params allow to configure the GCS_UTM, they can be set in the file "config.json". Basically, at this moment, is only possible to set the params of each company and set to turn on/of the GridView (only for Windows).
+
+| Param      | Description |
+| ----------- | ----------- |
+| gridView | on/off (1/0) |
+| companies | Array with the companies configurations|
+| name     | given name for the company       |
+| location   | position in the airspace, representing (x,y) cells |
+| cod   | unique code for the company   |
+| port   | port that the MavLink will be transmitted        |
+| timeout   | time in seconds to consider that the connection is down |
+
+**Attention: the number of companies should match with the initialization in the ContainerNet python script
+
+Config.json example:
+
+```
+{    
+  "gridview" : 1,
+  "companies": [
+    {
+      "name": "company1",
+      "location": [ 2, 2 ],
+      "cod": 1,
+      "port": 14540,
+      "timeout": 3
+    },
+    {
+      "name": "company2",
+      "location": [ 19, 3 ],
+      "cod": 2,
+      "port": 14541,
+      "timeout": 3
+    },
+    {
+      "name": "company3",
+      "location": [ 15, 18 ],
+      "cod": 1,
+      "port": 14542,
+      "timeout": 3
+    }
+  ]
+
+}
+
+```
+
+
+
+
+##Possible Errors:
+
+#When Running the Python ContainerNet  Scrypt:
+
+FileNotFoundError: [Errno 2] No such file or directory: '/etc/network/interfaces' 
+
+Solution: 
+
+```
+sudo apt-get autoremove --purge ifupdown
+sudo apt-get install ifupdown
+sudo mn -c
+```
+  
+Exception: Error creating interface pair (sc1-eth1,s1-eth1): RTNETLINK answers: File exists
+
+Solution: 
+
+``` sudo mn -c ```
+
+
+#Running Evaluation Tests
+
+At this moment the model of the tests are hardcoded in C++ in the GCS_UTM.cpp at the Method GCS_UTM::runTests. The tests are called from the UTM_APP or from the GridView in case this is activated. The method GCS_UTM::generateStats create a CSV file to allow the analysis.
+
+##To run the tests: 
+
+* Call the pyhton scrypt to create the ContainerNet environment:
+   * ex: python3 demo01.py  
+* Open the GCS_UTM and wait to mavsdk identify all drones and then:
+   * With GridView -> Click "Run Test 1"
+   * Without GridView -> Press Enter 
+
+
+
 
 
 
