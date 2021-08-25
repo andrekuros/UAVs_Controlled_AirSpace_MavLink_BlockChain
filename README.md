@@ -191,13 +191,40 @@ Config.json example:
 }
 
 ```
+<hr>
 
+# Evaluation Tests
 
+At this moment the model of the tests are hardcoded in C++ in the GCS_UTM.cpp at the Method GCS_UTM::runTests. The tests are called from the UTM_APP or from the GridView in case this is activated. The method GCS_UTM::generateStats create a CSV file to allow the analysis.
 
+## Running the tests: 
 
-##Possible Errors:
+* Call the pyhton scrypt to create the ContainerNet environment:
+   * ex: python3 demo01.py 
+    
+* Open the GCS_UTM 
+   * Wait to the Mavsdk to connect to all drones (for example with 30 drones in some cases 45 seconds):
+      * With GridView -> Click "Update Systems"
+      * Without GridView -> Press Enter 
+   * Wait for all systems to be recognized (for example with 30 drones in some cases 30 seconds)
+      * With GridView -> Click "Run Test 1"
+      * Without GridView -> Press Enter   
+      
+The results will be in the file "name_of_the_test.csv", as example:
 
-#When Running the Python ContainerNet  Scrypt:
+cod| company| actionRequests| actionSuccess| missionRequests| missionsSuccess| busy| cancel| timeouts
+c1-n10|1|3|0|21|21|0|0|0
+c1-n11|1|3|0|21|21|0|0|0
+c1-n12|1|3|0|21|21|0|0|0
+c1-n13|1|3|0|21|21|0|0|0
+c1-n14|1|3|0|21|21|0|0|0
+c1-n15|1|3|0|21|21|0|0|0
+
+<hr>
+
+## Common Errors:
+
+# When Running the Python ContainerNet  Scrypt:
 
 FileNotFoundError: [Errno 2] No such file or directory: '/etc/network/interfaces' 
 
@@ -214,19 +241,6 @@ Exception: Error creating interface pair (sc1-eth1,s1-eth1): RTNETLINK answers: 
 Solution: 
 
 ``` sudo mn -c ```
-
-
-#Running Evaluation Tests
-
-At this moment the model of the tests are hardcoded in C++ in the GCS_UTM.cpp at the Method GCS_UTM::runTests. The tests are called from the UTM_APP or from the GridView in case this is activated. The method GCS_UTM::generateStats create a CSV file to allow the analysis.
-
-##To run the tests: 
-
-* Call the pyhton scrypt to create the ContainerNet environment:
-   * ex: python3 demo01.py  
-* Open the GCS_UTM and wait to mavsdk identify all drones and then:
-   * With GridView -> Click "Run Test 1"
-   * Without GridView -> Press Enter 
 
 
 
