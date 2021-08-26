@@ -68,7 +68,7 @@ void Board::draw(NVGcontext* vg)
 //==============================================================================
 // SLOT_draw
 //==============================================================================
-SLOT_draw::SLOT_draw(Application* app, Color col, GridConfig gconf, GCSMav_control* gcs) : app(app), color(col), gconf(gconf), gcs(gcs)
+SLOT_draw::SLOT_draw(Application* app, Color col, GridConfig gconf, GCS_UTM* gcs) : app(app), color(col), gconf(gconf), gcs(gcs)
 {
     shape = make_rectangle_shape(gconf.g_sideLength * 2, gconf.g_sideLength * 2);
     shape = offset_shape(shape, -4.0f / gconf.gridCorrection);
@@ -183,7 +183,7 @@ void UAV_draw::draw(NVGcontext* vg)
 // GRID VIEW
 //==============================================================================
 
-GridView::GridView(Config conf, GCSMav_control* gcs) : Application(conf), board(this, gcs->gconf), gcs(gcs){
+GridView::GridView(Config conf, GCS_UTM* gcs) : Application(conf), board(this, gcs->gconf), gcs(gcs){
     SLOTs.reserve(gconf.gridSize * gconf.gridSize);
 
     for (size_t i = 0; i < gconf.gridSize; i++) {

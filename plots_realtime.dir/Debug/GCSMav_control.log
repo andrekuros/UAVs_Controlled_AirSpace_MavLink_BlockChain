@@ -1,0 +1,193 @@
+﻿E:\Programas\VS2019\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(1947,5): warning : The referenced project 'F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\\build\ZERO_CHECK.vcxproj' does not exist.
+E:\Programas\VS2019\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(1947,5): warning : The referenced project 'F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\\build\3rdparty\clipper\clipper.vcxproj' does not exist.
+E:\Programas\VS2019\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(1947,5): warning : The referenced project 'F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\\build\_deps\mahi-util-build\3rdparty\fmt\fmt.vcxproj' does not exist.
+E:\Programas\VS2019\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(1947,5): warning : The referenced project 'F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\\build\3rdparty\glad\glad.vcxproj' does not exist.
+E:\Programas\VS2019\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(1947,5): warning : The referenced project 'F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\\build\3rdparty\glfw\src\glfw.vcxproj' does not exist.
+E:\Programas\VS2019\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(1947,5): warning : The referenced project 'F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\\build\gui.vcxproj' does not exist.
+E:\Programas\VS2019\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(1947,5): warning : The referenced project 'F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\\build\3rdparty\nanovg\nanovg.vcxproj' does not exist.
+E:\Programas\VS2019\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(1947,5): warning : The referenced project 'F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\\build\3rdparty\nativefiledialog-extended\src\nfd.vcxproj' does not exist.
+E:\Programas\VS2019\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(1947,5): warning : The referenced project 'F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\\build\_deps\mahi-util-build\util.vcxproj' does not exist.
+  GCSMav_control.cpp
+  GridView.cpp
+  UAVControl.cpp
+  UAV_MAV.cpp
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\Utils.h(91,18): warning C4305: 'inicializando': truncamento de 'double' para 'float' (compilando arquivo de origem GCSMav_control.cpp)
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\Utils.h(92,18): warning C4305: 'inicializando': truncamento de 'double' para 'float' (compilando arquivo de origem GCSMav_control.cpp)
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\Utils.h(94,19): warning C4305: 'inicializando': truncamento de 'double' para 'float' (compilando arquivo de origem GCSMav_control.cpp)
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\Utils.h(97,44): warning C4244: 'inicializando': conversão de 'double' para 'float', possível perda de dados (compilando arquivo de origem GCSMav_control.cpp)
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\Utils.h(105,42): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados (compilando arquivo de origem GCSMav_control.cpp)
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\Utils.h(137,68): warning C4244: 'return': conversão de 'double' para 'float', possível perda de dados (compilando arquivo de origem GCSMav_control.cpp)
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\Utils.h(91,18): warning C4305: 'inicializando': truncamento de 'double' para 'float' (compilando arquivo de origem UAVControl.cpp)
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\Utils.h(92,18): warning C4305: 'inicializando': truncamento de 'double' para 'float' (compilando arquivo de origem UAVControl.cpp)
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\Utils.h(94,19): warning C4305: 'inicializando': truncamento de 'double' para 'float' (compilando arquivo de origem UAVControl.cpp)
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\Utils.h(97,44): warning C4244: 'inicializando': conversão de 'double' para 'float', possível perda de dados (compilando arquivo de origem UAVControl.cpp)
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\Utils.h(105,42): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados (compilando arquivo de origem UAVControl.cpp)
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\Utils.h(137,68): warning C4244: 'return': conversão de 'double' para 'float', possível perda de dados (compilando arquivo de origem UAVControl.cpp)
+GCSMav_control.cpp(13,19): warning C4244: 'inicializando': conversão de 'float' para 'int', possível perda de dados
+GCSMav_control.cpp(14,19): warning C4244: 'inicializando': conversão de 'float' para 'int', possível perda de dados
+GCSMav_control.cpp(72,44): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+GCSMav_control.cpp(73,44): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados
+GCSMav_control.cpp(198,25): warning C4834: descartando o valor retornado da função com o atributo 'nodiscard'
+UAVControl.cpp(15,22): warning C4305: '=': truncamento de 'double' para 'float'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': redefinição de macro (compilando arquivo de origem GridView.cpp)
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\3rdparty\glad\include\glad/glad.h(640): message : consulte a definição anterior de 'APIENTRY' (compilando arquivo de origem GridView.cpp)
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\Utils.h(91,18): warning C4305: 'inicializando': truncamento de 'double' para 'float' (compilando arquivo de origem GridView.cpp)
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\Utils.h(92,18): warning C4305: 'inicializando': truncamento de 'double' para 'float' (compilando arquivo de origem GridView.cpp)
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\Utils.h(94,19): warning C4305: 'inicializando': truncamento de 'double' para 'float' (compilando arquivo de origem GridView.cpp)
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\Utils.h(97,44): warning C4244: 'inicializando': conversão de 'double' para 'float', possível perda de dados (compilando arquivo de origem GridView.cpp)
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\Utils.h(105,42): warning C4244: '=': conversão de 'double' para 'float', possível perda de dados (compilando arquivo de origem GridView.cpp)
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\Utils.h(137,68): warning C4244: 'return': conversão de 'double' para 'float', possível perda de dados (compilando arquivo de origem GridView.cpp)
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\GridView.h(164,22): warning C4244: 'argumento': conversão de 'double' para 'float', possível perda de dados (compilando arquivo de origem GridView.cpp)
+GridView.cpp(10,43): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(10,87): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(11,59): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(11,43): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(11,115): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(11,99): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(12,47): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(12,91): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(102,33): warning C4244: 'argumento': conversão de 'float' para 'const unsigned __int64', possível perda de dados
+GridView.cpp(102,42): warning C4244: 'argumento': conversão de 'float' para 'const unsigned __int64', possível perda de dados
+GridView.cpp(103,20): warning C4305: '=': truncamento de 'double' para 'float'
+GridView.cpp(105,20): warning C4305: '=': truncamento de 'double' para 'float'
+GridView.cpp(107,33): warning C4244: 'argumento': conversão de 'float' para 'const unsigned __int64', possível perda de dados
+GridView.cpp(107,42): warning C4244: 'argumento': conversão de 'float' para 'const unsigned __int64', possível perda de dados
+GridView.cpp(116,33): warning C4244: 'argumento': conversão de 'float' para 'const unsigned __int64', possível perda de dados
+GridView.cpp(116,42): warning C4244: 'argumento': conversão de 'float' para 'const unsigned __int64', possível perda de dados
+GridView.cpp(118,50): warning C4244: 'argumento': conversão de 'float' para 'const unsigned __int64', possível perda de dados
+GridView.cpp(118,59): warning C4244: 'argumento': conversão de 'float' para 'const unsigned __int64', possível perda de dados
+GridView.cpp(119,20): warning C4305: '=': truncamento de 'double' para 'float'
+GridView.cpp(133,24): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(179,24): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(192,51): warning C4305: 'argumento': truncamento de 'double' para 'float'
+GridView.cpp(211,60): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(211,40): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(213,60): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(213,40): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(217,94): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(217,74): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(217,54): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(217,34): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(333,56): warning C4305: 'argumento': truncamento de 'double' para 'float'
+GridView.cpp(431,81): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(431,61): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(442,37): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(443,49): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(443,38): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(444,33): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(445,41): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+GridView.cpp(445,33): warning C4244: 'argumento': conversão de 'int' para 'float', possível perda de dados
+mavsdk_action.lib(action.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk_action.lib(action.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk_action.lib(action_impl.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk_action.lib(action_impl.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk_mission.lib(mission.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk_mission.lib(mission.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk_mission.lib(mission_impl.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk_mission.lib(mission_impl.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk_telemetry.lib(telemetry.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk_telemetry.lib(telemetry.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk_telemetry.lib(telemetry_impl.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk_telemetry.lib(telemetry_impl.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk_telemetry.lib(math_conversions.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk_telemetry.lib(math_conversions.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(system.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(system.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(connection_result.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(connection_result.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(mavsdk.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(mavsdk.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(global_include.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(global_include.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(system_impl.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(system_impl.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(plugin_impl_base.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(plugin_impl_base.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(log.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(log.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(mavlink_mission_transfer.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(mavlink_mission_transfer.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(mavsdk_impl.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(mavsdk_impl.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(call_every_handler.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(call_every_handler.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(timeout_handler.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(timeout_handler.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(mavlink_parameters.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(mavlink_parameters.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(mavlink_commands.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(mavlink_commands.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(mavlink_message_handler.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(mavlink_message_handler.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(mavlink_statustext_handler.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(mavlink_statustext_handler.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(ping.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(ping.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(timesync.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(timesync.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(connection.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(connection.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(tcp_connection.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(tcp_connection.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(udp_connection.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(udp_connection.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(serial_connection.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(serial_connection.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(cli_arg.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(cli_arg.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(mavlink_receiver.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(mavlink_receiver.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mavsdk.lib(mavlink_channels.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mavsdk.lib(mavlink_channels.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-gui.lib(Color.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-gui.lib(Color.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-gui.lib(imgui.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-gui.lib(imgui.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-gui.lib(imgui_widgets.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-gui.lib(imgui_widgets.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-gui.lib(Application.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-gui.lib(Application.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-gui.lib(Transform.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-gui.lib(Transform.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-gui.lib(Shape.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-gui.lib(Shape.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-gui.lib(Transformable.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-gui.lib(Transformable.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-gui.lib(imgui_custom.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-gui.lib(imgui_custom.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-gui.lib(imgui_draw.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-gui.lib(imgui_draw.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-gui.lib(imgui_impl_glfw.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-gui.lib(imgui_impl_glfw.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-gui.lib(imgui_impl_opengl3.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-gui.lib(imgui_impl_opengl3.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-util.lib(Random.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-util.lib(Random.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-util.lib(Time.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-util.lib(Time.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-util.lib(Frequency.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-util.lib(Frequency.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-util.lib(Clock.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-util.lib(Clock.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-util.lib(Coroutine.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-util.lib(Coroutine.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-util.lib(System.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-util.lib(System.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-util.lib(Timestamp.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-util.lib(Timestamp.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-util.lib(LogUtil.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-util.lib(LogUtil.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-util.lib(Log.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-util.lib(Log.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-util.lib(Console.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-util.lib(Console.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-util.lib(Mutex.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-util.lib(Mutex.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+mahi-util.lib(File.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+mahi-util.lib(File.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+fmt.lib(format.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+fmt.lib(format.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+clipper.lib(clipper.obj) : error LNK2038: não correspondência detectada para '_ITERATOR_DEBUG_LEVEL': valor '0' não corresponde ao valor '2' no GCSMav_control.obj
+clipper.lib(clipper.obj) : error LNK2038: não correspondência detectada para 'RuntimeLibrary': valor 'MD_DynamicRelease' não corresponde ao valor 'MDd_DynamicDebug' no GCSMav_control.obj
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflita com uso de outras bibliotecas; use /NODEFAULTLIB:library
+F:\Projetos\GITHUB\UAVs_Controlled_AirSpace_MavLink_BlockChain\\build\examples\Debug\plots_realtime-d.exe : fatal error LNK1319: 112 não correspondências detectadas

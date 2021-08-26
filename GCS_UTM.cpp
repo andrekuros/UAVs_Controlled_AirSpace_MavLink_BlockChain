@@ -1,6 +1,6 @@
-#include "GCSMav_control.h"
+#include "GCS_UTM.h"
 
-void GCSMav_control::updateSlots()
+void GCS_UTM::updateSlots()
 {
     for (auto company : CompanyList)
     {       
@@ -41,8 +41,7 @@ void GCSMav_control::updateSlots()
     }
 }
 
-
-void GCSMav_control::checkSystems()
+void GCS_UTM::checkSystems()
 {
     for (auto company : CompanyList)
     {
@@ -114,7 +113,7 @@ void GCSMav_control::checkSystems()
     }
 }
 
-void GCSMav_control::prepareSim(std::string type)
+void GCS_UTM::prepareSim(std::string type)
 {
     if (type == "delivery")
     {
@@ -145,7 +144,8 @@ void GCSMav_control::prepareSim(std::string type)
 
     }
 }
-void GCSMav_control::runTests(std::string test)
+
+void GCS_UTM::runTests(std::string test)
 {
     if (test == "Test1")
     {              
@@ -211,16 +211,14 @@ void GCSMav_control::runTests(std::string test)
             {
                 testRunning = "None";
                 runningTest = false;
-                std::cout << "\nTESTE01::UFinished11(" << getSimTime() - testStart << ")";
+                std::cout << "\nTESTE01::Finished(" << getSimTime() - testStart << ")";
                 testStart = 0;                
             }
         }        
-    }
-
-   
+    }  
 }
 
-void GCSMav_control::generateStats(std::string file)
+void GCS_UTM::generateStats(std::string file)
 {    
     std::ofstream myfile;
     myfile.open(file, std::ios_base::app);
@@ -281,24 +279,39 @@ void GCSMav_control::generateStats(std::string file)
 }
 
 
-GCSMav_control::GCSMav_control(GridConfig gconf) : gconf(gconf)
+GCS_UTM::GCS_UTM(GridConfig gconf) : gconf(gconf)
 {            
-    std::vector<Coord> companiesCoord = { {2,2}, {19,3}, {15,18} };
+        
+    //Load Config from config.json
+    FILE* pFile = fopen("config.json", "r");
     
+    char buffer[65536];
+    FileReadStream is(pFile, buffer, sizeof(buffer));
     
-    for (int i = 0; i < numCompanies; i++)
-    {
+    Document config;
+    config.ParseStream(is);// <0, UTF8<>, FileReadStream>(is);    
+
+    gridView = config["gridview"].GetInt();
+    
+    const Value& companies = config["companies"];
+
+    //Define the companies positions
+    //std::vector<Coord> companiesCoord = { {2,2}, {19,3}, {15,18} };
+        
+    //Create de MAVSDk for the companies
+    for (SizeType i = 0; i < companies.Size(); i++) // Uses SizeType instead of size_t        
+    {        
         Mavsdk* mavsdk = new Mavsdk();        
-        mavsdk->set_timeout_s(3);
+        mavsdk->set_timeout_s(companies[i]["timeout"].GetInt());
 
-        ConnectionResult connection_result = mavsdk->add_any_connection("udp://0.0.0.0:1454" + std::to_string(i));
+        ConnectionResult connection_result = mavsdk->add_any_connection("udp://0.0.0.0:" + std::to_string(companies[i]["port"].GetInt()));
         mavsdk->subscribe_on_new_system([&mavsdk]() {});
-
+        
         Company* aux_company = new Company();
         aux_company->mavsdk = mavsdk;
-        aux_company->cod = i + 1;
-        aux_company->cellPos = companiesCoord[i];
-        aux_company->geoPos = gridToGeo(companiesCoord[i], gconf);
+        aux_company->cod = companies[i]["cod"].GetInt();        
+        aux_company->cellPos = Coord(companies[i]["location"][0].GetFloat(),  companies[i]["location"][1].GetFloat() );
+        aux_company->geoPos = gridToGeo(aux_company->cellPos, gconf);
 
         CompanyList.push_back(aux_company);
         std::cout << "Connection result: " << connection_result << '\n';        
@@ -320,26 +333,24 @@ GCSMav_control::GCSMav_control(GridConfig gconf) : gconf(gconf)
                     cell->company = i + 1 ;
                 }
             }
-
         }
         AirspaceSlots.push_back(row);               
-    }  
-    
+    }      
     startTime = std::clock();
 }
 
-double GCSMav_control::getSimTime()
+double GCS_UTM::getSimTime()
 {
     return (std::clock() - startTime) / (double)CLOCKS_PER_SEC;
 }
 
-double GCSMav_control::diffTime(double timeIni, double timeCur)
+double GCS_UTM::diffTime(double timeIni, double timeCur)
 {
     return (timeCur - timeIni);
 }
 
 
-void GCSMav_control::resetTime()
+void GCS_UTM::resetTime()
 {    
     startTime = std::clock();
     return;

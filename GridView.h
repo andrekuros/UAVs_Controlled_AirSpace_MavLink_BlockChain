@@ -5,7 +5,7 @@
 #include <Mahi/Util.hpp>
 #include <Mahi/Util/Range.hpp>
 
-#include "GCSMav_control.h"
+#include "GCS_UTM.h"
 
 #include <iostream>
 #include <future>
@@ -94,7 +94,7 @@ public:
 
 class SLOT_draw : public Transformable {
 public:
-    SLOT_draw(Application* app, Color col, GridConfig gconf, GCSMav_control* gcs);
+    SLOT_draw(Application* app, Color col, GridConfig gconf, GCS_UTM* gcs);
 
     void setColor(Color _col, float _alpha) {
         color = _col;
@@ -135,7 +135,7 @@ public:
     Color        color;
     float        alpha;
     GridConfig gconf;
-    GCSMav_control* gcs;
+    GCS_UTM* gcs;
 };
 
 //==============================================================================
@@ -185,7 +185,7 @@ public:
 
 class GridView : public Application {
 public:
-    GridView(Config conf, GCSMav_control* gcs);
+    GridView(Config conf, GCS_UTM* gcs);
     ~GridView() { nvgluDeleteFramebuffer(checker); }
 
     void update();    
@@ -214,7 +214,7 @@ public:
     bool runningTest{ false };
     std::string testRunning = "None";
 
-    GCSMav_control* gcs;
+    GCS_UTM* gcs;
 
 };
 
