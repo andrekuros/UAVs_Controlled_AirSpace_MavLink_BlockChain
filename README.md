@@ -143,13 +143,16 @@ The UTM Controller is the solution created to allow to test algorithms to contro
 
 The current version of the GCS_UTM was tested Windows or Linux and can be started inside or outside of the Mininet, allowing to monitor and control the drones from an external host. 
 
+### To activate or not teh GridView, comment/umcomment "#Define GRIDVIEW" in the UTM_APP.cpp
+
 ### Setting GCS_UTM
    
 Some params allow to configure the GCS_UTM, they can be set in the file "config.json". Basically, at this moment, is only possible to set the params of each company and set to turn on/of the GridView (only for Windows).
 
+
 | Param      | Description |
 | ----------- | ----------- |
-| gridView | on/off (1/0) |
+| gridView | on/off (1/0) !Is not working for now, use #Defnie GRIDVIEW in UTM_APP.cpp|
 | companies | Array with the companies configurations|
 | name     | given name for the company       |
 | location   | position in the airspace, representing (x,y) cells |
