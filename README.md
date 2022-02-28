@@ -47,12 +47,9 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 REF: https://containernet.github.io/#installation
 
 ```
-sudo apt-get install ansible git aptitude
+sudo apt-get install ansible
 git clone https://github.com/containernet/containernet.git
-cd containernet/ansible
-sudo ansible-playbook -i "localhost," -c local install.yml
-cd ..
-sudo make develop
+sudo ansible-playbook -i "localhost," -c local containernet/ansible/install.yml
 ```
 
 Test CONTAINERNET
