@@ -256,6 +256,10 @@ Solution:
 
 ``` sudo mn -c ```
 
+Version Docker <= 4.10 in Python
+
+```sudo python -m pip install docker==4.1.0```
+
 
 
 
