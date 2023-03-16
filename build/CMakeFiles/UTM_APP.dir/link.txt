@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/UTM_APP.dir/UTM_APP.cpp.o CMakeFiles/UTM_APP.dir/GCS_UTM.cpp.o CMakeFiles/UTM_APP.dir/UAV_MAV.cpp.o  -o UTM_APP /usr/lib/libmavsdk.so.1.0.8 -lpthread 

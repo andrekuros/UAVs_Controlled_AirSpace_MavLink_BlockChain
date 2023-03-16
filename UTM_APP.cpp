@@ -1,6 +1,6 @@
 #include "GCS_UTM.h"
 
-#define GRIDVIEW 
+//#define GRIDVIEW 
 
 #ifdef GRIDVIEW
 #include "GridView.h"
@@ -34,18 +34,23 @@ int main(int argc, char const* argv[])
 #else
 //	else {
 
-		Sleep(45000);
-		gcs->checkSystems();
-		Sleep(30000);
+		std::cout << "\n------------- Initialization Waiting Drones Containers ----------------------\n";
+		sleep(35);
+		std::cout << "\n------------- Initialization Checking Systems ----------------------\n";		
+		gcs->checkSystems();		
+		sleep(20);
+		std::cout << "\n------------- Initialization Ready ----------------------\n";
 
 		while (tests.size() > 0)
 		{
 			double runTime = gcs->getSimTime();
-			//Eval UAV Tasks (every 1 second)
-			if (runTime - gcs->lastEvalTasks >= 1)
+			
+			//Eval UAV Tasks (every 0.1 second)
+			if (runTime - gcs->lastEvalTasks >= 0.1)
 			{
 				gcs->lastEvalTasks = runTime;
 
+				//std::cout << "\n------------- Evaluating Tasks ( "<< runTime <<" ----------------------\n";
 				for (auto company : gcs->CompanyList)
 				{
 					for (auto const& [key, uav] : company->UAV_MAP)
@@ -55,7 +60,7 @@ int main(int argc, char const* argv[])
 				}
 			}
 
-			//Update UAV tasks (every 1 second)
+			//Update UAV positions (every 1 second)
 			if (runTime - gcs->lastCheckSlots >= 1)
 			{
 				gcs->lastCheckSlots = runTime;
@@ -68,19 +73,18 @@ int main(int argc, char const* argv[])
 				gcs->checkSystems();
 				gcs->lastCheckTest = runTime;
 				gcs->runTests(runningTest);
-				if (gcs->runningTest == false)
+				if (gcs->finished == true)
 				{
 					tests.pop_back();
+					gcs->finished = false;
 				}
 			}
-			Sleep(5);
+			usleep(100);
 		}
 
 		gcs->generateStats(runningTest + ".csv");
-	}
+//	}
 	
 #endif
-	
-	return 0;
 
 }

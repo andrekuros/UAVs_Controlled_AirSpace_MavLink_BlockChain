@@ -24,23 +24,17 @@
 #include <mavsdk/plugins/info/info.h>
 #include <mavsdk/plugins/telemetry/telemetry.h>
 
-#include "rapidjson/document.h"
-#include <rapidjson/filereadstream.h>
-
-using namespace rapidjson;
-
 //==============================================================================
 // PARAMS
 //==============================================================================
 
-class GCS_UTM {
+class GCSMav_control {
 public:
     
-    GCS_UTM(GridConfig gconf);
+    GCSMav_control(GridConfig gconf);
     void updateSlots();
     void checkSystems();
     void prepareSim(std::string type);
-	bool checkPreparation();
     double getSimTime();
     double diffTime(double timeIni, double timeCur);
     void resetTime();
@@ -48,9 +42,6 @@ public:
     void  generateStats(std::string file);
 
     GridConfig gconf;
-
-    bool gridView = 0;
-
     int NumSys = 0;
     int numCompanies = 3;
 
@@ -63,13 +54,8 @@ public:
     std::string testRunning = "Nil";
     double testStart = 0;
     int testFase = 0;
-    int testTotal = 1;
+    int testTotal = 18;
     bool runningTest = false;
-	bool inPreparation = false;
-	bool finished = false;
-	int preparationTimes = 0;
-	
-    
 
     std::vector<Company*> CompanyList;
     std::vector<std::vector<Cell*>> AirspaceSlots;

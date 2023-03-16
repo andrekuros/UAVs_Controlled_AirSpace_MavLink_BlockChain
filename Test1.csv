@@ -1,0 +1,18 @@
+
+----------New Group Test:1
+
+New Test Fix
+At=2022-02-27 01:56:23.641775
+numCompanies=3
+dronesInCompanies =[2, 2, 2]
+delaysCompaniesUAVs =['0ms', '0ms', '0ms']
+delaysCompaniesSwitch =['0ms', '0ms', '0ms']
+bwCompanies =[1000, 1000, 1000]
+
+cod; company; actionRequests; actionSuccess; missionRequests; missionsSuccess; busy; cancel; timeouts
+c1-n10;1;5;3;22;17;0;0;0
+c1-n11;1;5;2;25;16;0;0;0
+c2-n20;2;8;1;26;16;0;0;0
+c2-n21;2;7;1;23;18;0;0;0
+c3-n30;3;4;3;26;15;0;0;0
+c3-n31;3;4;3;28;15;0;0;0

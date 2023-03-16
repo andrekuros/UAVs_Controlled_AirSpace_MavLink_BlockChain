@@ -1,6 +1,6 @@
-#include "GCS_UTM.h"
+#include "GCSMav_control.h"
 
-void GCS_UTM::updateSlots()
+void GCSMav_control::updateSlots()
 {
     for (auto company : CompanyList)
     {       
@@ -41,7 +41,8 @@ void GCS_UTM::updateSlots()
     }
 }
 
-void GCS_UTM::checkSystems()
+
+void GCSMav_control::checkSystems()
 {
     for (auto company : CompanyList)
     {
@@ -113,22 +114,21 @@ void GCS_UTM::checkSystems()
     }
 }
 
-void GCS_UTM::prepareSim(std::string type)
+void GCSMav_control::prepareSim(std::string type)
 {
-    
-	std::cout << "\n----------------Preparing Simulation::" << type << " --------------";
-	if (type == "delivery")
+    if (type == "delivery")
     {
         for (auto company : CompanyList)
         {
-            std::cout << "\n----------------Preparing Simulation::Sending Arm Commands --------------";
-			for (auto const [key, uav] : company->UAV_MAP)
-            {               
+            for (auto const [key, uav] : company->UAV_MAP)
+            {
+               
                 ActionData actArm{ "arm" };                            
                 uav->addTask(actArm);
+
                 ActionData actTakeOff{ "takeOff" };
                 actTakeOff.alt = 2.5f ;                
-                //uav->addTask(actTakeOff);
+                uav->addTask(actTakeOff);
                 //ActionData actFlyTo{ "flyTo", company->geoPos.lat, company->geoPos.lon, 30.0f, hdgFromPath(Geo(uav->lat, uav->lon), company->geoPos) };
                 //uav->addTask(actFlyTo);
  
@@ -138,69 +138,27 @@ void GCS_UTM::prepareSim(std::string type)
 
                 //ActionData actMissionStart{ "missionStart" };                
                 //uav->addTask(actMissionStart);
-            }			
+
+
+            }
         }
+
     }
 }
-
-bool GCS_UTM::checkPreparation()
-{	
-	bool companiesOk = true;
-	preparationTimes++;		
-	
-	for (auto company : CompanyList)
-	{		
-		int totalUAVs = company->UAV_MAP.size();
-		int inAir = 0;		
-		for (auto const [key, uav] : company->UAV_MAP)
-		{              
-					
-			if (!uav->isArmed)
-			{
-				 ActionData actArm{ "arm" };                            
-				uav->addTask(actArm);
-			}
-			else
-			{
-				if (!uav->inAir)
-				{						
-					ActionData actTakeOff{ "takeOff" };
-					actTakeOff.alt = 2.5f ;                
-					uav->addTask(actTakeOff);							
-				}
-				else
-				{									
-					inAir++;
-					uav->taskList.clear();						
-				}
-			}
-		}	
-		if (inAir < totalUAVs)
-		{
-			std::cout << "\n----------Preparation Company " << company->cod << "(" << inAir << " / " << totalUAVs << ") --------";
-			companiesOk = false;
-		}			
-				
-							
-	}	
-	return companiesOk;	
-}
-
-
-void GCS_UTM::runTests(std::string test)
+void GCSMav_control::runTests(std::string test)
 {
     if (test == "Test1")
     {              
         double testRunTime = getSimTime() - testStart;
         if (runningTest)
         {                       
-            //if (testRunTime >= 10) //Wait 10 seconds for first run after preparation
-            //{
-                if ((testFase + 2) * 10  < ( testRunTime ) && testFase <= testTotal) //new msgs every 5 seconds
+            if (testRunTime >= 10)
+            {
+                if ((testFase + 2) * 5 < testRunTime && testFase <= testTotal)
                 {
                     testFase++;
 
-                    std::cout << "\n------------- TestRunning::Fase::" << testFase << "(" << testRunTime << ") ----------------------";
+                    std::cout << "\nTestRunning::Fase::" << testFase;
 
                     for (auto company : CompanyList)
                     {
@@ -213,12 +171,12 @@ void GCS_UTM::runTests(std::string test)
                                // ActionData actMissionUpload{ "flyTo", geo.lat, geo.lon,488+30,rand()% 360};
                                 //uav->addTask(actMissionUpload);
 
-                               //ActionData actMissionStart{ "missionStart" };
-                               //uav->addTask(actMissionStart);
+                               // ActionData actMissionStart{ "missionStart" };
+                               // uav->addTask(actMissionStart);
                                // uav->onMission = true;
-                               uav->createMission("random", 0, 0, 0.01);
-                               ActionData actMissionUpload{ "missionUpload" };
-                               uav->addTask(actMissionUpload);
+                                uav->createMission("random", 0, 0, 0.01);
+                                ActionData actMissionUpload{ "missionUpload" };
+                                uav->addTask(actMissionUpload);
                             }
                             else
                             {
@@ -233,53 +191,41 @@ void GCS_UTM::runTests(std::string test)
                         }
                     }
                 }
-            //}
+            }
         }
         else 
         {           
-            if (!inPreparation)
-			{
-				testRunning == test;				
-				testFase = 0;
-				testTotal = 20;
-				prepareSim("delivery");	
-				inPreparation = true; 				
-			}
-			else
-			{   
-				if (checkPreparation() || preparationTimes > 10)
-				{
-					runningTest = true;	
-					testStart = getSimTime();
-					std::cout << "\n-------------- " << test << "::Started ---------------------------------";						
-				}			
-							
-			}	
-
-
-					
+            testRunning == test;
+            testStart = getSimTime();
+            testFase = 0;
+            testTotal = 20; 
+            std::cout << "\nTESTE01::Started";
+            prepareSim("delivery");
+            runningTest = true;
         }
 
         if (testFase >= testTotal)
         {
             testRunning = "Finalizing...";            
-            if (testRunTime > (testTotal + 2 ) * 10 + 10)
+            if (testRunTime > (testTotal + 2 ) * 5 + 15)
             {
                 testRunning = "None";
-                finished = true;
-                std::cout << "\n-------------- " << test << "::Finished(" << getSimTime() - testStart << ") -----------------";
+                runningTest = false;
+                std::cout << "\nTESTE01::UFinished11(" << getSimTime() - testStart << ")";
                 testStart = 0;                
             }
         }        
-    }  
+    }
+
+   
 }
 
-void GCS_UTM::generateStats(std::string file)
+void GCSMav_control::generateStats(std::string file)
 {    
     std::ofstream myfile;
-    myfile.open(file, std::ios_base::app);
+    myfile.open(file);
 
-    myfile << "\n\ncod; company; actionRequests; actionSuccess; missionRequests; missionsSuccess; busy; cancel; timeouts\n";
+    myfile << "cod; company; actionRequests; actionSuccess; missionRequests; missionsSuccess; busy; cancel; timeouts\n";
      
     for (auto company : CompanyList)
     {                       
@@ -335,39 +281,24 @@ void GCS_UTM::generateStats(std::string file)
 }
 
 
-GCS_UTM::GCS_UTM(GridConfig gconf) : gconf(gconf)
+GCSMav_control::GCSMav_control(GridConfig gconf) : gconf(gconf)
 {            
-        
-    //Load Config from config.json
-    FILE* pFile = fopen("config.json", "r");
+    std::vector<Coord> companiesCoord = { {2,2}, {19,3}, {15,18} };
     
-    char buffer[65536];
-    FileReadStream is(pFile, buffer, sizeof(buffer));
     
-    Document config;
-    config.ParseStream(is);// <0, UTF8<>, FileReadStream>(is);    
-
-    gridView = config["gridview"].GetInt();
-    
-    const Value& companies = config["companies"];
-
-    //Define the companies positions
-    //std::vector<Coord> companiesCoord = { {2,2}, {19,3}, {15,18} };
-        
-    //Create de MAVSDk for the companies
-    for (SizeType i = 0; i < companies.Size(); i++) // Uses SizeType instead of size_t        
-    {        
+    for (int i = 0; i < numCompanies; i++)
+    {
         Mavsdk* mavsdk = new Mavsdk();        
-        mavsdk->set_timeout_s(companies[i]["timeout"].GetInt());
+        mavsdk->set_timeout_s(3);
 
-        ConnectionResult connection_result = mavsdk->add_any_connection("udp://0.0.0.0:" + std::to_string(companies[i]["port"].GetInt()));
+        ConnectionResult connection_result = mavsdk->add_any_connection("udp://0.0.0.0:1454" + std::to_string(i));
         mavsdk->subscribe_on_new_system([&mavsdk]() {});
-        
+
         Company* aux_company = new Company();
         aux_company->mavsdk = mavsdk;
-        aux_company->cod = companies[i]["cod"].GetInt();        
-        aux_company->cellPos = Coord(companies[i]["location"][0].GetFloat(),  companies[i]["location"][1].GetFloat() );
-        aux_company->geoPos = gridToGeo(aux_company->cellPos, gconf);
+        aux_company->cod = i + 1;
+        aux_company->cellPos = companiesCoord[i];
+        aux_company->geoPos = gridToGeo(companiesCoord[i], gconf);
 
         CompanyList.push_back(aux_company);
         std::cout << "Connection result: " << connection_result << '\n';        
@@ -389,24 +320,26 @@ GCS_UTM::GCS_UTM(GridConfig gconf) : gconf(gconf)
                     cell->company = i + 1 ;
                 }
             }
+
         }
         AirspaceSlots.push_back(row);               
-    }      
+    }  
+    
     startTime = std::clock();
 }
 
-double GCS_UTM::getSimTime()
+double GCSMav_control::getSimTime()
 {
-    return (std::clock() - startTime) / (double)CLOCKS_PER_SEC * 10 ;
+    return (std::clock() - startTime) / (double)CLOCKS_PER_SEC;
 }
 
-double GCS_UTM::diffTime(double timeIni, double timeCur)
+double GCSMav_control::diffTime(double timeIni, double timeCur)
 {
     return (timeCur - timeIni);
 }
 
 
-void GCS_UTM::resetTime()
+void GCSMav_control::resetTime()
 {    
     startTime = std::clock();
     return;

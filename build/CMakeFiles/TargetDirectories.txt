@@ -1,0 +1,3 @@
+/home/kuros/share/gcs-kuros/build/CMakeFiles/rebuild_cache.dir
+/home/kuros/share/gcs-kuros/build/CMakeFiles/UTM_APP.dir
+/home/kuros/share/gcs-kuros/build/CMakeFiles/edit_cache.dir

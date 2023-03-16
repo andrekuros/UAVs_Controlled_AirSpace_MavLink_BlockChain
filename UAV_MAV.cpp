@@ -3,7 +3,7 @@
 UAV_MAV::UAV_MAV() : SysId(0), lat(0), lon(0),system(nullptr), telemetry(nullptr), action(nullptr)
 {
 	nextMission = new Mission::MissionPlan();
-	currentMission = new Mission::MissionPlan();
+	currentMission = new Mission::MissionPlan();	
 	
 	actionCallback = [&](Action::Result result)
 	{		
@@ -31,7 +31,7 @@ UAV_MAV::UAV_MAV() : SysId(0), lat(0), lon(0),system(nullptr), telemetry(nullptr
 				actionStatus = "Ready";
 
 			}
-		}				
+		}		
 	};
 
 
@@ -161,6 +161,7 @@ Mission::MissionItem UAV_MAV::make_mission_item(
 
 void UAV_MAV::evaluateTasks()
 {
+	//std::cout << "\n" << cod << "::ActionStatus::( "<< actionStatus << " ) ->List ( " << taskList.size() << " )";
 	if (actionStatus == "Waiting" || taskList.size() == 0 || uploadingMission) return;
 
 	ActionData act = taskList.front();
@@ -168,7 +169,7 @@ void UAV_MAV::evaluateTasks()
 	if (act.type == "arm") {
 		if (!isArmed) 
 		{
-			sendArm();
+			sendArm();			
 		}
 		else 
 		{
@@ -180,17 +181,21 @@ void UAV_MAV::evaluateTasks()
 	{	
 		if (isArmed)
 		{
-			if (!inAir) {
-				sendTakeOff(act.alt);
+			if (!inAir) 
+			{
+				sendTakeOff(act.alt);				
 			}
 			else 
-			{
-				taskList.erase(taskList.begin());
+			{				
+				std::cout << "\nUAV::" << cod << "::Fail top TakeOff is already on AIR";
+				taskList.erase(taskList.begin());				
 			}
 		}
 		else 
 		{
-			ActionData act{ "arm" };
+			std::cout << "\nUAV::" << cod << "::Fail to TakeOff is not Armed";
+			//taskList.erase(taskList.begin());
+			ActionData act{ "arm" };			
 			taskList.insert(taskList.begin(), act);						
 		}
 
@@ -198,7 +203,17 @@ void UAV_MAV::evaluateTasks()
 	
 	if (act.type == "flyTo")
 	{
-		if (inAir) sendFlyTo(act.lat, act.lon, act.alt, act.hdg);
+		if (inAir)
+		{
+			sendFlyTo(act.lat, act.lon, act.alt, act.hdg);
+		}
+		else 
+		{
+			std::cout << "\nUAV::" << cod << "::Fail to FlyTo -> is on Air";
+			taskList.erase(taskList.begin());
+			//ActionData act{ "arm" };			
+			//taskList.insert(taskList.begin(), act);						
+		}
 	}
 	
 	if (act.type == "missionUpload")
@@ -220,16 +235,19 @@ void UAV_MAV::evaluateTasks()
 		else 
 		{
 			ActionData act{ "takeOff" };
-			act.alt = 30;
-			taskList.insert(taskList.begin(), act);
+			std::cout << "\nUAV::" << cod << "::Fail to Start Mission -> is on Air";
+			taskList.erase(taskList.begin());
+			//act.alt = 30;
+			//taskList.insert(taskList.begin(), act);
 		}
 	}
 }
 
 void UAV_MAV::addTask(ActionData act)
 {
-	std::cout << "\n" << cod << "::NewTask::" << act.type;
+	
 	taskList.push_back(act);
+	std::cout << "\n" << cod << "::NewTask::" << act.type;
 }
 
 void UAV_MAV::sendMissionUpload()
